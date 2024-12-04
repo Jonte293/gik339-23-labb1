@@ -28,13 +28,18 @@ function handleClick(e) {
 
 button.addEventListener('click', handleClick);
 
-checkbox.addEventListener('change');
+function handleCheckboxChange(e) {
+    const colorField = color.color;
+    if (checkbox.checked) {
+        emptyDiv.style.backgroundColor = colorField.value;
+    }
+}
+
+checkbox.addEventListener('change', handleCheckboxChange);
 
 inputFields.addEventListener('');
 
 inputFields.forEach(field => {
     field.addEventListener("input", handleInput)
-    field.addEventListener("blur", function(e){
-        console.log(`${handleInput} förlorade focus`);
-    })
+    field.addEventListener("blur",)
 });
