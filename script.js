@@ -31,3 +31,10 @@ button.addEventListener('click', handleClick);
 checkbox.addEventListener('change');
 
 inputFields.addEventListener('');
+
+inputFields.forEach(field => {
+    field.addEventListener("input", handleInput)
+    field.addEventListener("blur", function(e){
+        console.log(`${handleInput} förlorade focus`);
+    })
+});
