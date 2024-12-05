@@ -8,38 +8,30 @@ const inputFields = document.querySelectorAll(".textfield");
 const button = document.getElementById("removeDiv");
 
 // Hämtar div-elementet, lagrar i variabel
-const emptyDiv = document.getElementsByClassName("emptyDiv");
-
+const emptyDiv = document.querySelector(".emptyDiv");
 
 function handleInput(e) {
     const targetName = e.target.name;
+    const targetField = e.target.value;
 
-    const contentField = settings.content;
-
-    console.log(targetName);
+    console.log(targetName, e.target);
     if (targetName === "content") {
-        emptydiv.innerHTML = contentField.value;
+        emptyDiv.innerHTML = targetField;
     }
 }
 
-function handleClick(e) {
-    console.log('Någon klickade på knappen! Parameter, ', e);
-}
+button.addEventListener('click', (e) => {
+    e.preventDefault();
+    emptyDiv.remove();
+    console.log('Någon klickade på "Ta bort" knappen! Parameter, ', e);
+});
 
-button.addEventListener('click', handleClick);
-
-function handleCheckboxChange(e) {
-    const colorField = color.color;
-    if (checkbox.checked) {
-        emptyDiv.style.backgroundColor = colorField.value;
-    }
-}
-
-checkbox.addEventListener('change', handleCheckboxChange);
-
-inputFields.addEventListener('');
+checkbox.addEventListener('change', (e) => {
+    const colorField = document.getElementById('color');
+    emptyDiv.style.backgroundColor = colorField.value;
+});
 
 inputFields.forEach(field => {
     field.addEventListener("input", handleInput)
-    field.addEventListener("blur",)
+    field.addEventListener("blur", handleInput)
 });
