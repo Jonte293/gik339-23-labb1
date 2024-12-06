@@ -74,6 +74,7 @@ form {
 }
 
 /*----------------------------------------------------------------*/
+
 .textfield:focus, .checkbox:focus {
     outline: none;
     border-radius: 0.2rem;
